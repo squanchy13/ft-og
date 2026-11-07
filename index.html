@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Financial Times Orgrimmar · Issue No. 1 · 2026-11-01</title>
-<meta property="og:title" content="The Gates of Orgrimmar Open: A Market Without a Past">
-<meta property="og:description" content="Financial Times Orgrimmar · Issue No. 1 · 2026-11-01">
+<title>Financial Times Orgrimmar · CAMWOW EU4 Realm 5 PvE Horde · 2026-11-06</title>
+<meta property="og:title" content="Mageweave tumbles as Forever&#x27;s first prices find their floor">
+<meta property="og:description" content="Financial Times Orgrimmar · CAMWOW EU4 Realm 5 PvE Horde · 2026-11-06">
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#8b1a1a">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:url" content="https://squanchy13.github.io/ft-og/20261101_issue-1.html">
+<meta property="og:url" content="https://squanchy13.github.io/ft-og/20261106.html">
 <meta property="og:image" content="https://squanchy13.github.io/ft-og/assets/discord_banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" hreflang="en" href="https://squanchy13.github.io/ft-og/20261101_issue-1.html">
-<link rel="alternate" hreflang="de" href="https://squanchy13.github.io/ft-og/20261101_issue-1.de.html">
+<link rel="alternate" hreflang="en" href="https://squanchy13.github.io/ft-og/20261106.html">
+<link rel="alternate" hreflang="de" href="https://squanchy13.github.io/ft-og/20261106.de.html">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
@@ -170,12 +170,6 @@ footer{text-align:center; font-style:italic; color:var(--ink-soft); font-size:15
   .scroll{max-width:none}
   *{-webkit-print-color-adjust:exact; print-color-adjust:exact}
 }
-
-.guide{list-style:none; padding:0; margin:1em 0 0; display:grid; gap:12px}
-.guide li{padding-left:20px; position:relative}
-.guide li::before{content:"◆"; color:var(--blood); position:absolute; left:0; top:.15em; font-size:.75em}
-.guide b{font-family:var(--f-head); color:var(--blood); font-weight:600; letter-spacing:.02em}
-.issue-no{font-family:var(--f-head); font-weight:800; color:var(--blood); letter-spacing:.12em; text-transform:uppercase; font-size:14px; margin-top:.8em}
 .langswitch{margin-top:.6em; font-family:var(--f-head); font-size:13px; letter-spacing:.12em; text-transform:uppercase}
 .langswitch a{color:var(--blood); text-decoration:none; border:1px solid var(--blood); padding:3px 10px; border-radius:3px}
 </style>
@@ -185,48 +179,383 @@ footer{text-align:center; font-style:italic; color:var(--ink-soft); font-size:15
   <div class="scroll-top"></div>
   <div class="scroll-body">
     <header>
+      <div class="seal" id="seal" aria-hidden="true"></div>
       <h1><img class="logo" src="assets/logo.png" alt="Financial Times Orgrimmar"></h1>
-      <p class="subtitle">Dispatch to the Warchief, compiled on 1 November 2026</p>
-      <div class="issue-no">Issue No. 1 · Pre-launch edition</div>
-      <div class="eyebrow">Auction house ledger · WoW Forever · PvE · Horde</div>
-      <div class="langswitch"><a href="20261101_issue-1.de.html" hreflang="de" lang="de">Deutsch</a></div>
+      <p class="subtitle" id="subtitle"></p>
+      <div class="eyebrow">Auction house ledger · <span id="realm"></span></div>
+      <div class="meta" id="scanmeta"></div>
+      <div class="langswitch"><a href="20261106.de.html" hreflang="de" lang="de">Deutsch</a></div>
+      <div class="pulse" id="pulse"></div>
     </header>
 
     <section class="lead">
-      <h2>Outlook</h2>
-      <p class="headline">The Gates of Orgrimmar Open: A Market Without a Past</p>
-      <div class="callout"><p>World of Warcraft: Forever opens on 4 November at 3:00 p.m. PDT, which is midnight CET going into 5 November in Europe. Blizzard has confirmed there is no WoW Token, no paid character boost and no GDKP raiding. Since 13 October it can also put a Temporary Economy Hold on accounts suspected of trading gold. Guide sites report, though this is not yet verified, that Forever has no realms, just one auction house per ruleset and faction in each region. If that holds, our market, the Horde auction house of the PvE ruleset, will be far deeper than any classic realm&#x27;s.</p><p>Earlier fresh Classic launches show where to look. In the first days, levelling materials such as linen cloth, copper ore, peacebloom, silverleaf and light leather, along with bags, were scarce and expensive, then got cheaper as more players reached the zones that drop them. Higher-level materials came later and also started out expensive. The first raids unlock on 9 December, so flasks, potions, food and their herbs are worth watching; in past launches they usually rose ahead of raids. My reading is that the stricter rules on gold trading will likely limit how much bought gold pushes up early prices.</p><p>The first dispatch with real figures will follow once a few days of auction house scans exist.</p></div>
-      <span class="byline">By our senior market analyst (Claude)</span>
+      <p class="headline" id="headline"></p>
+      <div class="callout" id="summary"></div>
+      <span class="byline" id="byline"></span>
+    </section>
+
+    <section id="newswrap">
+      <h2>Word from the Front</h2>
+      <p class="lede" id="newslede"></p>
+      <ul class="news" id="news"></ul>
     </section>
 
     <section>
-      <h2>What Every Dispatch Brings</h2>
-      <p class="lede">From the first scans on, each dispatch is built from the full auction house scans of our market: the Horde auction house of the PvE ruleset. Sections appear as soon as there is enough data for them.</p>
-      <ul class="guide"><li><b>Word from the Front</b> · Game news and blue posts from the past week that can move prices, each rated by how strongly it is likely to matter and for which goods.</li><li><b>Spoils to Seize</b> · Goods selling well below their usual price, ranked by the profit you can expect after the auction cut and deposits, with a sensible amount to buy (about one day of sales).</li><li><b>Goods to Unload</b> · Goods selling well above their usual price: a good moment to post yours.</li><li><b>Supply Lines</b> · Goods running short (far fewer listed than usual) or piling up (far more than usual), next to the next big event on the calendar.</li><li><b>Out of Line</b> · Prices far outside their range of the last two weeks, often the first sign that something has changed.</li><li><b>Where the Gold Lies</b> · The biggest markets in goods for professions, by the value of everything listed.</li><li><b>The Busiest Roads</b> · The goods where the most gold changes hands per day, from estimated sales.</li><li><b>Ground Gained and Lost</b> · The biggest price moves since the previous scan.</li><li><b>Quick Raids</b> · Vendor flips: buy on the auction house and sell to a vendor, or buy from a vendor and post on the auction house.</li><li><b>Worth the Grind</b> · Farm routes and what they pay in gold per hour at today&#x27;s prices, after the auction cut.</li><li><b>The March of Prices</b> · Price charts of the most important goods over the last two weeks.</li><li><b>Eyes on the Horizon</b> · Goods the analyst thinks are worth watching, and why.</li><li><b>Rules of Engagement</b> · How every signal is calculated, and where the figures come from.</li></ul>
-      
+      <h2>Spoils to Seize</h2>
+      <p class="lede" id="buylede"></p>
+      <p class="callout eventwarn" hidden></p>
+      <div class="tbl" id="buywrap"><table id="buy"></table></div>
     </section>
 
     <section>
-      <h2>How to Read a Dispatch</h2>
-      
-      <ul class="guide"><li><b>Item names</b> · On the page, every item links to Wowhead. On Discord the name stands in a grey box: copy it and paste it straight into the auction house search.</li><li><b>Prices</b> · In gold, silver and copper, from the cheap end of what is listed, not from a single odd listing.</li><li><b>Patience</b> · Buy and sell signals compare today with the usual price, so they need about four days of scans. Sales estimates and two-week ranges take longer. Until then a dispatch shows the biggest markets, price moves and vendor flips.</li><li><b>Ideas, not guarantees</b> · The market can turn by the next scan. Check the price yourself before you buy.</li></ul>
-      
+      <h2>Goods to Unload</h2>
+      <p class="lede" id="selllede"></p>
+      <p class="callout eventwarn" hidden></p>
+      <div class="tbl" id="sellwrap"><table id="sell"></table></div>
+    </section>
+
+    <section id="supplywrap">
+      <h2>Supply Lines</h2>
+      <p class="lede" id="supplylede"></p>
+      <div id="shortwrap"><h3 class="sub">Running short</h3>
+      <div class="tbl"><table id="short"></table></div></div>
+      <div id="glutwrap"><h3 class="sub">Piling up</h3>
+      <div class="tbl"><table id="glut"></table></div></div>
+    </section>
+
+    <section id="outlierwrap">
+      <h2>Out of Line</h2>
+      <p class="lede" id="outlierlede"></p>
+      <div class="tbl"><table id="outliers"></table></div>
     </section>
 
     <section>
-      <h2>Dates to Mark</h2>
-      
-      <ul class="guide"><li><b>4 November, 3:00 p.m. PDT</b> · Forever launches (midnight CET going into 5 November).</li><li><b>9 December</b> · The first raids open: Barrow Deeps (10 players), Hyjal Summit (20) and Onyxia&#x27;s Lair (40).</li><li><b>Spring 2027</b> · More raids and dungeons, according to Blizzard&#x27;s roadmap; a Hardcore ruleset follows after launch.</li></ul>
-      
+      <h2>Where the Gold Lies</h2>
+      <p class="lede">The biggest markets on the auction house right now: lowest price × number listed.</p>
+      <div class="tbl"><table id="markets"></table></div>
+    </section>
+
+    <section id="tradedwrap">
+      <h2>The Busiest Roads</h2>
+      <p class="lede">The most traded wares: estimated units sold per day over the last week, and the gold that changes hands at today’s price. Sales are estimated from listings that vanished before they could expire, so they are a lower bound.</p>
+      <div class="tbl"><table id="traded"></table></div>
+    </section>
+
+    <section id="moverswrap">
+      <h2>Ground Gained and Lost</h2>
+      <p class="lede" id="moverslede"></p>
+      <div class="tbl"><table id="movers"></table></div>
+    </section>
+
+    <section id="flipwrap">
+      <h2>Quick Raids</h2>
+      <p class="lede">Vendor flips: profit without waiting on the market. These listings are usually few and go fast, so check them in game first.</p>
+      <div id="flipAwrap"><h3 class="sub">Buy on the auction house, sell to a vendor</h3>
+      <div class="tbl"><table id="flipA"></table></div></div>
+      <div id="flipBwrap"><h3 class="sub">Buy from a vendor, post on the auction house</h3>
+      <div class="tbl"><table id="flipB"></table></div></div>
+    </section>
+
+    <section>
+      <h2>Worth the Grind</h2>
+      <div id="zonewrap"><h3 class="sub">Measured from your own loot</h3>
+      <p class="lede" id="zonelede"></p>
+      <div class="tbl"><table id="zones"></table></div></div>
+      <h3 class="sub" id="farmhead">Your routes</h3>
+      <p class="lede" id="farmlede"></p>
+      <div class="tbl" id="farmwrap"><table id="farm"></table></div>
+      <div id="ideaswrap"><h3 class="sub">The analyst suggests</h3><ul class="ideas" id="ideas"></ul></div>
+    </section>
+
+    <section>
+      <h2>The March of Prices</h2>
+      <p class="lede" id="chartlede"></p>
+      <div class="legend">
+        <span><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="#3a3532" stroke-width="2"/></svg>Minimum buyout</span>
+        <span><svg width="26" height="8"><line x1="0" y1="4" x2="26" y2="4" stroke="#8b1a1a" stroke-width="1.5" stroke-dasharray="4 3"/></svg>7-day average</span>
+      </div>
+      <div class="charts" id="charts"></div>
+    </section>
+
+    <section id="watchwrap">
+      <h2>Eyes on the Horizon</h2>
+      <ul class="ideas" id="watch"></ul>
+    </section>
+
+    <section>
+      <h2>Rules of Engagement</h2>
+      <div class="cols">
+        <div>
+          <h3>Signals</h3>
+          <dl id="rules"></dl>
+        </div>
+        <div>
+          <h3>Sources</h3>
+          <p id="sources"></p>
+        </div>
+      </div>
     </section>
 
     <hr>
-    <footer>Issue No. 1, pre-launch edition. No market figures yet: the first scans come after launch. Financial Times Orgrimmar gives ideas, not guarantees.</footer>
+    <footer id="footer"></footer>
     <p class="closing">Lok’tar ogar.</p>
     <img class="sigil" src="assets/horde.png" alt="Horde emblem">
   </div>
   <div class="scroll-bottom"></div>
 </div>
 
+<script>
+const R = {"realm": "CAMWOW EU4 Realm 5 PvE Horde", "faction": "", "scanDate": "2026-11-06", "generated": "2026-11-07T01:29", "listings": 134391, "uniqueItems": 1721, "index": null, "scanDays": 2, "source": "scan", "demo": false, "wowheadBase": "https://www.wowhead.com/classic", "signals": {"buy_below_ratio": 0.85, "sell_above_ratio": 1.12, "min_listed": 20, "min_price_copper": 500, "max_rows": 10, "min_flip_profit": 5000, "default_sell_chance": 0.5, "margin_of_safety": 1.25, "default_max_units": 5, "shortage_ratio": 0.4, "shortage_days": 1, "glut_ratio": 2.0, "outlier_z": 2.0, "outlier_min_change": 0.1, "event_window_days": 3, "min_sell_chance": 0.05, "robust": true, "spike_filter_k": 3.0}, "dates": ["2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06"], "items": {"1793": {"name": "Patched Leather Shoulderpads", "quality": 0, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_06.jpg"}, "769": {"name": "Chunk of Boar Meat", "quality": 1, "category": "Meat", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_food_14.jpg"}, "286978": {"name": "Item #286978", "quality": 1, "category": null, "icon": null}, "5124": {"name": "Small Raptor Tooth", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_bone_08.jpg"}, "286979": {"name": "Item #286979", "quality": 1, "category": null, "icon": null}, "286981": {"name": "Item #286981", "quality": 1, "category": null, "icon": null}, "20745": {"name": "Minor Mana Oil", "quality": 1, "category": "Other", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_potion_98.jpg"}, "16652": {"name": "Shredder Operating Manual - Page 8", "quality": 1, "category": "Quest", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_note_06.jpg"}, "2318": {"name": "Light Leather", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_leatherscrap_03.jpg"}, "2319": {"name": "Medium Leather", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_leatherscrap_05.jpg"}, "783": {"name": "Light Hide", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_pelt_wolf_ruin_02.jpg"}, "4371": {"name": "Bronze Tube", "quality": 1, "category": "Parts", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_gizmo_pipe_01.jpg"}, "11287": {"name": "Lesser Magic Wand", "quality": 2, "category": "Wand", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_02.jpg"}, "11288": {"name": "Greater Magic Wand", "quality": 2, "category": "Wand", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_07.jpg"}, "2589": {"name": "Linen Cloth", "quality": 1, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_fabric_linen_01.jpg"}, "277278": {"name": "Item #277278", "quality": 1, "category": null, "icon": null}, "277279": {"name": "Item #277279", "quality": 1, "category": null, "icon": null}, "6444": {"name": "Forked Tongue", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/spell_nature_guardianward.jpg"}, "9774": {"name": "Greenweave Vest", "quality": 2, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_cloth_15.jpg"}, "2865": {"name": "Rough Bronze Leggings", "quality": 2, "category": "Mail", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_03.jpg"}, "2866": {"name": "Rough Bronze Cuirass", "quality": 2, "category": "Mail", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_chain_08.jpg"}, "3389": {"name": "Elixir of Defense", "quality": 1, "category": "Elixir", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_potion_64.jpg"}, "14145": {"name": "Cursed Felblade", "quality": 3, "category": "Sword", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_shortblade_12.jpg"}, "6211": {"name": "Recipe: Elixir of Ogre's Strength", "quality": 1, "category": "Alchemy", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_scroll_03.jpg"}, "3651": {"name": "Veteran Shield", "quality": 2, "category": "Shield", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_shield_09.jpg"}, "6468": {"name": "Deviate Scale Belt", "quality": 3, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_09.jpg"}, "14151": {"name": "Chanting Blade", "quality": 3, "category": "Dagger", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_shortblade_25.jpg"}, "6217": {"name": "Copper Rod", "quality": 1, "category": "Enchanting", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_flute_01.jpg"}, "11082": {"name": "Greater Astral Essence", "quality": 2, "category": "Enchanting", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_enchant_essenceastrallarge.jpg"}, "11083": {"name": "Soul Dust", "quality": 1, "category": "Enchanting", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_enchant_dustsoul.jpg"}, "11084": {"name": "Large Glimmering Shard", "quality": 3, "category": "Enchanting", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_enchant_shardglimmeringlarge.jpg"}, "286540": {"name": "Item #286540", "quality": 1, "category": null, "icon": null}, "2642": {"name": "Loose Chain Boots", "quality": 0, "category": "Mail", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_01.jpg"}, "1366": {"name": "Ragged Leather Pants", "quality": 0, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_06.jpg"}, "1367": {"name": "Ragged Leather Boots", "quality": 0, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_boots_06.jpg"}, "252771": {"name": "Item #252771", "quality": 1, "category": null, "icon": null}, "252772": {"name": "Item #252772", "quality": 1, "category": null, "icon": null}, "252773": {"name": "Item #252773", "quality": 1, "category": null, "icon": null}, "1380": {"name": "Frayed Robe", "quality": 0, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_chest_cloth_21.jpg"}, "248684": {"name": "Item #248684", "quality": 1, "category": null, "icon": null}, "250989": {"name": "Item #250989", "quality": 1, "category": null, "icon": null}, "248688": {"name": "Item #248688", "quality": 1, "category": null, "icon": null}, "7286": {"name": "Black Whelp Scale", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_monsterscales_03.jpg"}, "3191": {"name": "Arced War Axe", "quality": 3, "category": "Axe", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_axe_06.jpg"}, "252794": {"name": "Item #252794", "quality": 1, "category": null, "icon": null}, "5500": {"name": "Iridescent Pearl", "quality": 2, "category": "Simple", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_gem_pearl_02.jpg"}, "3712": {"name": "Turtle Meat", "quality": 1, "category": "Meat", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_food_70.jpg"}, "3201": {"name": "Barbarian War Axe", "quality": 2, "category": "Axe", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_axe_17.jpg"}, "5762": {"name": "Red Linen Bag", "quality": 1, "category": "Bag", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_bag_02.jpg"}, "15494": {"name": "Bloodspattered Shield", "quality": 2, "category": "Shield", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_shield_14.jpg"}, "4233": {"name": "Cured Medium Hide", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_pelt_bear_02.jpg"}, "4235": {"name": "Heavy Hide", "quality": 1, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_pelt_wolf_ruin_03.jpg"}, "11406": {"name": "Rotting Bear Carcass", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_pelt_bear_ruin_02.jpg"}, "3730": {"name": "Big Bear Meat", "quality": 1, "category": "Meat", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_food_14.jpg"}, "4757": {"name": "Cracked Egg Shells", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_egg_04.jpg"}, "4250": {"name": "Hillman's Belt", "quality": 2, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_06.jpg"}, "3740": {"name": "Decapitating Sword", "quality": 2, "category": "Sword", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_weapon_shortblade_26.jpg"}, "7074": {"name": "Chipped Claw", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_bone_06.jpg"}, "10413": {"name": "Gloves of the Fang", "quality": 3, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_18.jpg"}, "6581": {"name": "Scouting Belt", "quality": 2, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_16.jpg"}, "7096": {"name": "Plucked Feather", "quality": 0, "category": "Junk", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_feather_16.jpg"}, "7097": {"name": "Leg Meat", "quality": 1, "category": "Food & Drink", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_food_18.jpg"}, "277952": {"name": "Item #277952", "quality": 1, "category": null, "icon": null}, "1732": {"name": "Worn Mail Bracers", "quality": 0, "category": "Mail", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_bracer_03.jpg"}, "11981": {"name": "Lead Band", "quality": 2, "category": "Miscellaneous", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_jewelry_ring_01.jpg"}, "1744": {"name": "Laced Mail Shoulderpads", "quality": 0, "category": "Mail", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_07.jpg"}, "2772": {"name": "Iron Ore", "quality": 1, "category": "Metal & Stone", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_ore_iron_01.jpg"}, "281300": {"name": "Item #281300", "quality": 1, "category": null, "icon": null}, "4566": {"name": "Sturdy Quarterstaff", "quality": 2, "category": "Staff", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_staff_08.jpg"}, "6359": {"name": "Firefin Snapper", "quality": 1, "category": "Other", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_misc_monsterhead_01.jpg"}, "1499": {"name": "Calico Pants", "quality": 0, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_pants_11.jpg"}, "250340": {"name": "Item #250340", "quality": 1, "category": null, "icon": null}, "14567": {"name": "Bristlebark Belt", "quality": 2, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_belt_03.jpg"}, "1769": {"name": "Canvas Shoulderpads", "quality": 0, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_shoulder_09.jpg"}, "4339": {"name": "Bolt of Mageweave", "quality": 1, "category": "Cloth", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_fabric_mageweave_03.jpg"}, "3576": {"name": "Tin Bar", "quality": 1, "category": "Metal & Stone", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_ingot_05.jpg"}, "1791": {"name": "Patched Leather Gloves", "quality": 0, "category": "Leather", "icon": "https://wow.zamimg.com/images/wow/icons/medium/inv_gauntlets_05.jpg"}}, "stats": {}, "prices": {"1793": 3900, "769": 91, "286978": 4000, "5124": 192, "286979": 2400, "286981": 1255, "20745": 8000, "16652": 1500, "2318": 28, "2319": 147, "783": 330, "4371": 2498, "11287": 200, "11288": 400, "2589": 23, "9774": 10000, "2865": 700, "2866": 913, "3389": 5999, "6211": 4966, "3651": 960, "6468": 20587, "6217": 100, "11082": 6498, "11083": 2582, "11084": 29899, "286540": 34833, "2642": 100, "1366": 10000, "1367": 100, "252771": 15000, "252772": 4734, "252773": 7166, "1380": 1050, "248684": 2376, "250989": 1083, "248688": 14000, "7286": 15000, "252794": 9900, "5500": 50000, "3712": 1500, "3201": 6600, "5762": 500, "15494": 1400, "4233": 1829, "4235": 7250, "11406": 500, "3730": 479, "4757": 98, "4250": 4850, "3740": 4000, "7074": 100, "10413": 13800, "6581": 4400, "7096": 100, "7097": 30, "1732": 200, "11981": 8300, "1744": 1853, "2772": 10000, "4566": 1049, "6359": 2799, "1499": 200, "250340": 2500, "14567": 10800, "1769": 2500, "4339": 4198, "3576": 347, "1791": 5000}, "buys": [], "shortages": [], "gluts": [], "nextEvent": null, "eventWindow": [{"day": "2026-11-04", "title": "WoW Forever launches worldwide (15:00 PST)"}, {"day": "2026-11-04", "title": "World of Warcraft: Forever is Now Live"}], "outliers": [], "mostTraded": [{"item_id": 286540, "last": 34833, "qty": 9, "sold_per_day": 63.2, "sell_through": null, "gold_per_day": 2199978}, {"item_id": 20745, "last": 8000, "qty": 2, "sold_per_day": 189.5, "sell_through": null, "gold_per_day": 1515789}, {"item_id": 252794, "last": 9900, "qty": 2, "sold_per_day": 126.3, "sell_through": null, "gold_per_day": 1250526}, {"item_id": 11084, "last": 29899, "qty": 21, "sold_per_day": 38.8, "sell_through": null, "gold_per_day": 1160053}, {"item_id": 250340, "last": 2500, "qty": 7, "sold_per_day": 442.1, "sell_through": null, "gold_per_day": 1105263}, {"item_id": 3712, "last": 1500, "qty": 2, "sold_per_day": 568.4, "sell_through": null, "gold_per_day": 852631}, {"item_id": 11082, "last": 6498, "qty": 29, "sold_per_day": 126.3, "sell_through": null, "gold_per_day": 820800}, {"item_id": 4250, "last": 4850, "qty": 4, "sold_per_day": 126.3, "sell_through": null, "gold_per_day": 612631}, {"item_id": 3389, "last": 5999, "qty": 15, "sold_per_day": 100.0, "sell_through": null, "gold_per_day": 599900}, {"item_id": 5500, "last": 50000, "qty": 2, "sold_per_day": 11.1, "sell_through": null, "gold_per_day": 557491}], "cut": 0.05, "sells": [], "cpi": {"status": "forming", "starts": "2026-11-12", "qualifying": 0, "needed": 20}, "farms": [], "farmZones": [], "farmMin": {"min_hours": 2.0, "min_opens": 30, "include_friends": false}, "charts": [], "markets": [{"item_id": 2772, "last": 10000, "qty": 186}, {"item_id": 7286, "last": 15000, "qty": 87}, {"item_id": 6468, "last": 20587, "qty": 38}, {"item_id": 3576, "last": 347, "qty": 1974}, {"item_id": 6217, "last": 100, "qty": 6545}, {"item_id": 5762, "last": 500, "qty": 1301}, {"item_id": 11083, "last": 2582, "qty": 247}, {"item_id": 11084, "last": 29899, "qty": 21}, {"item_id": 4233, "last": 1829, "qty": 320}, {"item_id": 4371, "last": 2498, "qty": 234}], "movers": [{"item_id": 11084, "last": 29899, "qty": 21, "prev": 19333, "prev_qty": 10, "change": 0.5465}, {"item_id": 252771, "last": 15000, "qty": 26, "prev": 10550, "prev_qty": 14, "change": 0.4218}, {"item_id": 6211, "last": 4966, "qty": 28, "prev": 900, "prev_qty": 10, "change": 4.5178}, {"item_id": 6359, "last": 2799, "qty": 195, "prev": 198, "prev_qty": 84, "change": 13.1364}, {"item_id": 248688, "last": 14000, "qty": 16, "prev": 10750, "prev_qty": 6, "change": 0.3023}, {"item_id": 252773, "last": 7166, "qty": 21, "prev": 95600, "prev_qty": 16, "change": -0.925}, {"item_id": 250989, "last": 1083, "qty": 38, "prev": 30100, "prev_qty": 32, "change": -0.964}, {"item_id": 4339, "last": 4198, "qty": 72, "prev": 19000, "prev_qty": 35, "change": -0.7791}, {"item_id": 252772, "last": 4734, "qty": 29, "prev": 17916, "prev_qty": 19, "change": -0.7358}, {"item_id": 248684, "last": 2376, "qty": 59, "prev": 9500, "prev_qty": 116, "change": -0.7499}], "prevDay": "2026-11-05", "flipsVendor": [{"item_id": 11288, "last": 400, "qty": 1380, "vendor": 1535, "profit": 1135}, {"item_id": 11287, "last": 200, "qty": 1702, "vendor": 508, "profit": 308}, {"item_id": 2865, "last": 700, "qty": 486, "vendor": 962, "profit": 262}, {"item_id": 2866, "last": 913, "qty": 189, "vendor": 1255, "profit": 342}], "flipsPost": [], "editorial": {"by": "senior_analyst", "headline": "Mageweave tumbles as Forever's first prices find their floor", "article": ["Two days into WoW: Forever, our Horde PvE ledger holds full scans from 5 and 6 November only, too few for buy or sell signals. The clearest story is prices finding their floor. Bolt of Mageweave fell 78 %, from 1.90 gold to 42 silver, as listings doubled from 35 to 72, and several new Forever items dropped 70 to 96 %. Large Glimmering Shard went the other way: up 55 % to 2.99 gold on 21 listings, with about 39 selling a day, likely enchanters levelling.", "About 13 hours of scan comparisons already show how buyers behave. 54 % of listings priced near the market sold, 35 % of those 5 to 15 % above it, and fewer than one in ten beyond that. My reading: list close to the market, not above it.", "The one deep flip is 1,380 Greater Magic Wands at 4 silver against 15 silver from a vendor, about 11 silver profit each. Watch whether Mageweave keeps sliding. The price index starts its first base week on 12 November."], "key_points": ["Two scan days (5 and 6 November 2026), the last full scan at 01:00 UTC on 6 November: no buy, sell or unusual-price signals yet.", "Bolt of Mageweave 1.90 to 0.42 gold (-77.9 %) as listings rose from 35 to 72; new Forever items 252773, 250989, 252772 and 248684 fell 74 to 96 %.", "Large Glimmering Shard 1.93 to 2.99 gold (+54.7 %) on 21 listings, about 39 sold per day (estimate).", "Most traded by estimated sales: Minor Mana Oil 0.80 gold, about 190 a day; Turtle Meat 0.15 gold, about 568 a day; Greater Astral Essence 0.65 gold, about 126 a day.", "Probability of sale from about 80,000 ended listings: 76 % below 0.95x fair value, 54 % at 0.95-1.05x, 35 % at 1.05-1.15x, 7 % at 1.15-1.3x, under 2 % above 1.3x.", "Vendor flip: Greater Magic Wand at 0.04 gold on the AH against 0.15 gold from a vendor, 1,380 listed."], "notes": {}, "farm_notes": {}, "farm_ideas": [], "watch": [{"item_id": 4339, "why": "Fell 78 % to 42 silver as listings doubled; watch whether it finds a floor or keeps sliding."}, {"item_id": 11084, "why": "Up 55 % to 2.99 gold on only 21 listings while about 39 sell a day; enchanting demand likely."}, {"item_id": 11288, "why": "1,380 listed at 4 silver against 15 silver from a vendor: about 11 silver profit each."}]}, "news": [{"title": "World of Warcraft: Forever is Now Live", "link": "https://www.wowhead.com/classic/news=383749/world-of-warcraft-forever-is-now-live", "feed": "Wowhead Classic news", "published": "2026-11-04T23:01+00:00", "impact": "high", "direction": "mixed", "items": [], "why": "Launch opens the auction house; early-days supply is thin and leveling demand high, so prices will swing."}, {"title": "World of Warcraft: Forever Now Live!", "link": "https://worldofwarcraft.blizzard.com/news/24315820/world-of-warcraft-forever-now-live", "feed": "Blizzard WoW news", "published": "21 hours ago", "impact": "medium", "direction": "mixed", "items": [], "why": "Forever launch worldwide: fresh economy, levelling demand for consumables and materials, supply still thin."}, {"title": "Minimum Deposit of 1 Silver Required to List Items on Auction House in WoW: Forever", "link": "https://www.wowhead.com/news=383774/minimum-deposit-of-1-silver-required-to-list-items-at-auction-house-in-wow", "feed": "Wowhead news", "published": "2026-11-05T23:29+00:00", "impact": "medium", "direction": "up", "items": [], "why": "1 silver minimum AH deposit raises listing cost; likely fewer cheap listings and higher floor prices for low-value goods."}, {"title": "World of Warcraft: Forever is Now Live", "link": "https://www.wowhead.com/news=383749/world-of-warcraft-forever-is-now-live", "feed": "Wowhead news", "published": "2026-11-04T23:01+00:00", "impact": "medium", "direction": "mixed", "items": [], "why": "Forever launch: fresh economy, prices likely volatile as supply builds over the first days."}, {"title": "Taldramir, the Whispering Wood Revealed as WoW: Forever Legendary", "link": "https://www.wowhead.com/classic/news=383747/taldramir-the-whispering-wood-revealed-as-wow-forever-legendary", "feed": "Wowhead Classic news", "published": "2026-11-04T22:05+00:00", "impact": "medium", "direction": "up", "items": [], "why": "New crafted legendary revealed; likely lifts demand for its materials later, but they are not named here."}, {"title": "Taldramir, the Whispering Wood Revealed as WoW: Forever Legendary", "link": "https://www.wowhead.com/news=383747/taldramir-the-whispering-wood-revealed-as-wow-forever-legendary", "feed": "Wowhead news", "published": "2026-11-04T22:05+00:00", "impact": "medium", "direction": "up", "items": ["Taldramir, the Whispering Wood"], "why": "New crafted legendary revealed; demand for its crafting materials likely rises once known."}, {"title": "WoW: Forever Official Development Notes and Class Tuning", "link": "https://www.wowhead.com/classic/news=383704/wow-forever-official-development-notes-and-class-tuning", "feed": "Wowhead Classic news", "published": "2026-11-03T03:51+00:00", "impact": "medium", "direction": "unclear", "items": [], "why": "Official Forever launch notes incl. training cost changes; likely alters early gold sinks and demand."}, {"title": "WoW: Forever Official Development Notes and Class Tuning", "link": "https://www.wowhead.com/news=383704/wow-forever-official-development-notes-and-class-tuning", "feed": "Wowhead news", "published": "2026-11-03T03:51+00:00", "impact": "medium", "direction": "unclear", "items": [], "why": "Official Forever launch notes incl. training cost changes; likely alters early gold sinks and demand."}, {"title": "Long Maintenance Planned Ahead of WoW: Forever Launch", "link": "https://www.wowhead.com/news=383695/long-maintenance-planned-ahead-of-wow-forever-launch", "feed": "Wowhead news", "published": "2026-11-02T18:25+00:00", "impact": "medium", "direction": "unclear", "items": [], "why": "Forever launches 4 Nov 3pm PST after ~5h maintenance; the auction house market opens then."}, {"title": "Gather Around the Campfire in World of Warcraft: Forever", "link": "https://worldofwarcraft.blizzard.com/news/24301516/gather-around-the-campfire-in-world-of-warcraft-forever", "feed": "Blizzard WoW news", "published": "9 days ago (as of 30 Oct 2026)", "impact": "low", "direction": "up", "items": [], "why": "New camping system starts with Cooking's Basic Campfire; cooking materials likely see extra demand."}, {"title": "Choose Your Ruleset in World of Warcraft: Forever", "link": "https://worldofwarcraft.blizzard.com/news/24302070", "feed": "Blizzard WoW news", "published": "9 days ago", "impact": "low", "direction": "unclear", "items": [], "why": "Rulesets replace realm choice; affects how players and markets are split across auction houses."}, {"title": "Choose Your Ruleset in World of Warcraft: Forever", "link": "https://worldofwarcraft.blizzard.com/news/24302070/choose-your-ruleset-in-world-of-warcraft-forever", "feed": "Blizzard WoW news", "published": "8 days ago (as of 30 Oct 2026)", "impact": "low", "direction": "unclear", "items": [], "why": "Rulesets Normal, PvP, RP at launch, Hardcore later; separate realms likely split auction house markets."}], "public": true};
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const item = id => R.items[id] || {name:`Item #${id}`, quality:1};
+function money(c){
+  if(c==null) return "–";
+  c=Math.round(c); const g=Math.floor(c/10000), s=Math.floor(c%10000/100), k=c%100; let h="";
+  if(g) h+=`${g.toLocaleString("en-US")}<i class="g"></i>`;
+  if(s||g) h+=`${s}<i class="s"></i>`;
+  if(!g) h+=`${k}<i class="c"></i>`;
+  return `<span class="m">${h}</span>`;
+}
+const qcls = q => q>=4?"q4":q==3?"q3":q==2?"q2":"q0";
+function link(id, withCat=true){
+  const it=item(id);
+  const ico = it.icon ? `<img class="ico" src="${esc(it.icon)}" alt="" loading="lazy" onerror="this.remove()">` : "";
+  return `${ico}<a class="item ${qcls(it.quality)}" href="${R.wowheadBase}/item=${id}" target="_blank" rel="noopener">${esc(it.name)}</a>`+
+         (withCat && it.category ? `<span class="cat">${esc(it.category)}</span>` : "") +
+         (withCat && (R.stats[id]||{}).liquidity==="C" ? `<span class="cat thin">thin market</span>` : "");
+}
+const pct = r => `${r>=1?"+":"−"}${Math.abs(Math.round((r-1)*100))} %`;
+const note = id => esc((R.editorial.notes||{})[id] || "");
+const nice = d => new Date(d+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+const short = d => new Date(d+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"});
+const S = R.signals;
+const perday = v => v==null ? "–" : v>=10 ? Math.round(v).toLocaleString("en-US") : v.toFixed(1);
+
+/* header */
+$("realm").textContent = R.faction && !R.realm.toLowerCase().includes(R.faction.toLowerCase()) ? `${R.realm} · ${R.faction}` : R.realm;
+$("subtitle").textContent = `Dispatch to the Warchief, compiled on ${nice(R.generated.slice(0,10))}`;
+$("scanmeta").textContent = `Scanned the ${nice(R.scanDate)} · ${R.source}`;
+if(R.demo) $("seal").innerHTML = "DEMO<br>DATA"; else $("seal").hidden = true;
+const ed = R.editorial;
+$("pulse").innerHTML = [
+  [R.listings!=null ? R.listings.toLocaleString("en-US") : "–", R.source.startsWith("Auctionator") ? "auctions counted" : "auctions read"],
+  [(R.uniqueItems||0).toLocaleString("en-US"),"distinct wares"],
+  [R.index==null ? "–" : `${R.index>0?"+":""}${R.index.toFixed(1)} %`,"market index vs 7 days"],
+  [`${R.buys.length} · ${R.sells.length}`,"buy · sell signals"],
+  [R.cpi && R.cpi.value!=null ? `${R.cpi.value.toFixed(1)}${R.cpi.change_7d!=null?` <small>(${R.cpi.change_7d>0?"+":""}${R.cpi.change_7d.toFixed(1)} % 7d)</small>`:""}` : "–","Orgrimmar CPI"]
+].map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join("");
+
+$("headline").textContent = ed.headline || "";
+$("summary").innerHTML = (Array.isArray(ed.article) && ed.article.length ? ed.article : [ed.summary || ""])
+  .map(p => `<p>${esc(p)}</p>`).join("");
+$("byline").textContent = ed.by==="senior_analyst" ? "By our senior market analyst (Claude), from the day’s figures"
+  : ed.by==="journalist" ? "By our markets correspondent (Claude), from the analyst’s figures"
+  : ed.by==="claude" ? "Written by the analyst (Claude) from today’s figures" : "Rule-based summary · no analyst key set";
+
+/* news */
+const NEWS = R.news || [];
+if(NEWS.length){
+  const rated = NEWS.some(n=>n.impact);
+  $("newslede").textContent = rated
+    ? "Game news and blue posts from the last week that can move prices here, rated by the analyst."
+    : "Game news and blue posts from the last week that match the market keywords. Set an analyst key to have them rated.";
+  const byName = Object.fromEntries(Object.entries(R.items).map(([id,it])=>[String(it.name).toLowerCase(), id]));
+  const arrow = {up:"Prices likely up", down:"Prices likely down", mixed:"Mixed effect", unclear:""};
+  $("news").innerHTML = NEWS.map(n=>{
+    const imp = n.impact || "unrated";
+    const aff = (n.items||[]).map(nm=>{
+      const id = byName[String(nm).toLowerCase()];
+      const href = id ? `${R.wowheadBase}/item=${id}` : `${R.wowheadBase}/search?q=${encodeURIComponent(nm)}`;
+      return `<a href="${href}" target="_blank" rel="noopener">${esc(nm)}</a>`;
+    }).join(", ");
+    const dir = arrow[n.direction] || "";
+    return `<li><span class="imp ${imp}">${imp[0].toUpperCase()+imp.slice(1)}</span><div>
+      <a class="t" href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>
+      <span class="src"> · ${esc(n.feed)}, ${short(n.published.slice(0,10))}</span>
+      ${n.why?`<span class="why">${esc(n.why)}</span>`:""}
+      ${aff||dir?`<span class="aff">${dir}${dir&&aff?": ":""}${aff}</span>`:""}
+    </div></li>`;
+  }).join("");
+} else $("newswrap").hidden = true;
+
+/* ledgers */
+$("buylede").textContent = `At least ${Math.round((1-S.buy_below_ratio)*100)} % below their 7-day average, with at least ${S.min_listed} listed, and resale worth at least ${S.margin_of_safety}× the price. Ranked by expected profit: resale at the average after the ${Math.round(R.cut*100)} % auction cut, minus the price and the deposits for the expected number of listings (fewer when the chance of selling is high). The chance of selling is measured per item once enough scans exist; until then a cautious ${Math.round(S.default_sell_chance*100)} % (marked *). Buy no more than the suggested quantity, about one day of estimated sales.`;
+$("selllede").textContent = `Trading at least ${Math.round((S.sell_above_ratio-1)*100)} % above their 7-day average. Post now while the price holds.`;
+function ledger(tableId, rows, kind){
+  if(!rows.length){
+    $(tableId).outerHTML = R.scanDays < 4
+      ? `<p class="callout quiet empty">${kind==="buy"?"Buy":"Sell"} signals need about four days of scans to compare against. This ledger has ${R.scanDays}.</p>`
+      : `<p class="callout quiet empty">No ${kind} signals today.</p>`;
+    return;
+  }
+  $(tableId).innerHTML =
+    `<thead><tr><th>Ware</th><th>Now</th><th>3-day avg</th><th>7-day avg</th><th>14-day avg</th><th>${kind==="buy"?"Below":"Above"} avg</th><th>Listed</th><th>Sells/day</th>${kind==="sell"?"<th>List at</th>":""}<th>Note</th></tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${money(r.avg3)}</td><td>${money(r.avg7)}</td><td>${money(r.avg14)}</td><td><span class="sig ${kind}">${pct(r.ratio)}</span></td><td>${(r.qty||0).toLocaleString("en-US")}</td><td>${perday(r.sold_per_day)}</td>${kind==="sell"?`<td>${money(r.list_at)}</td>`:""}<td class="note">${note(r.item_id)}</td></tr>`).join("")+`</tbody>`;
+}
+if(!R.buys.length){
+  $("buy").outerHTML = R.scanDays < 4
+    ? `<p class="callout quiet empty">Buy signals need about four days of scans to compare against. This ledger has ${R.scanDays}.</p>`
+    : `<p class="callout quiet empty">No buy ideas with a positive expected profit today.</p>`;
+} else {
+  $("buy").innerHTML = `<thead><tr><th>Ware</th><th>Now</th><th>7-day avg</th><th>Below avg</th><th>Chance to sell</th><th>Sells/day</th><th>Profit each</th><th>Buy up to</th><th>Note</th></tr></thead><tbody>`+
+    R.buys.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${money(r.avg7)}</td><td><span class="sig buy">${pct(r.ratio)}</span></td><td>${Math.round(r.p_sell*100)} %${r.p_measured?"":"*"}</td><td>${perday(r.sold_per_day)}</td><td><b>${money(r.ev)}</b></td><td>${r.max_qty ?? (r.units+"*")}</td><td class="note">${note(r.item_id)}</td></tr>`).join("")+`</tbody>`;
+}
+
+/* supply lines */
+const SH = R.shortages||[], GL = R.gluts||[];
+if(SH.length || GL.length){
+  const ev = R.nextEvent ? ` Coming up: ${esc(R.nextEvent.title)} on ${nice(R.nextEvent.day)}.` : "";
+  $("supplylede").textContent = `Stock compared with its usual level over the last week. Running short: under ${Math.round(S.shortage_ratio*100)} % of usual and under ${S.shortage_days} day of supply (where sales are measured). Piling up: over ${S.glut_ratio}× usual, so the price is likely under pressure.` + ev;
+  const tbl = (id, rows) => {
+    if(!rows.length){ $(id+"wrap").hidden = true; return; }
+    $(id).innerHTML = `<thead><tr><th>Ware</th><th>Price</th><th>Listed now</th><th>Usually</th><th>vs usual</th><th>Days of supply</th></tr></thead><tbody>`+
+      rows.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${(r.qty||0).toLocaleString("en-US")}</td><td>${r.usual.toLocaleString("en-US")}</td><td><span class="sig ${r.qty_ratio<1?"sell":"buy"}">${Math.round(r.qty_ratio*100)} %</span></td><td>${r.days_supply ?? "–"}</td></tr>`).join("")+`</tbody>`;
+  };
+  tbl("short", SH); tbl("glut", GL);
+} else $("supplywrap").hidden = true;
+ledger("sell", R.sells, "sell");
+
+/* event weeks (research 2.6): signals stay, but marked less reliable */
+const EW = R.eventWindow || [];
+document.querySelectorAll(".eventwarn").forEach(el=>{
+  if(!EW.length) return;
+  el.hidden = false;
+  el.textContent = `Event week: ${EW.map(e=>`${e.title} (${nice(e.day)})`).join("; ")}. Prices swing harder around events and the usual averages mean less, so treat these signals as less reliable than usual.`;
+});
+
+/* out of line (research 2.1) */
+const OL = R.outliers || [];
+if(OL.length){
+  $("outlierlede").textContent = `Prices unusually far from their own recent range: today’s price compared with the last 14 days, measured in typical daily swings. ${S.outlier_z} or more swings away, and at least ${Math.round(S.outlier_min_change*100)} % from the average, is rare. Often a single cheap or pricey listing, a buy-out, or news; check before acting. The 14-day average appears once there are ten days of scans.`;
+  $("outliers").innerHTML = `<thead><tr><th>Ware</th><th>Now</th><th>3-day avg</th><th>7-day avg</th><th>14-day avg</th><th>How unusual</th><th>Listed</th></tr></thead><tbody>`+
+    OL.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${money(r.avg3)}</td><td>${money(r.avg7)}</td><td>${money(r.avg14)}</td><td><span class="sig ${r.z>0?"sell":"buy"}">${Math.abs(r.z).toFixed(1)} swings ${r.z>0?"above":"below"}</span></td><td>${(r.qty||0).toLocaleString("en-US")}</td></tr>`).join("")+`</tbody>`;
+} else $("outlierwrap").hidden = true;
+
+/* most traded (research 2.2) */
+const TR = R.mostTraded || [];
+if(TR.length){
+  $("traded").innerHTML = `<thead><tr><th>Ware</th><th>Price</th><th>Sells/day</th><th>Share of listings sold</th><th>Gold per day</th></tr></thead><tbody>`+
+    TR.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${perday(r.sold_per_day)}</td><td>${r.sell_through==null?"–":Math.round(r.sell_through*100)+" %"}</td><td><b>${money(r.gold_per_day)}</b></td></tr>`).join("")+`</tbody>`;
+} else $("tradedwrap").hidden = true;
+
+/* markets and flips */
+$("markets").innerHTML = `<thead><tr><th>Ware</th><th>Lowest price</th><th>Listed</th><th>Value listed</th><th>vs 7-day avg</th></tr></thead><tbody>`+
+  R.markets.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${(r.qty||0).toLocaleString("en-US")}</td><td>${money(r.last*Math.max(r.qty||0,1))}</td><td>${r.ratio!=null?`<span class="sig ${r.ratio>=1?"sell":"buy"}">${pct(r.ratio)}</span>`:"–"}</td></tr>`).join("")+`</tbody>`;
+const MV = R.movers || [];
+if(MV.length){
+  $("moverslede").textContent = `Price changes of at least 15 % between the scans of ${nice(R.prevDay)} and ${nice(R.scanDate)}, for wares with five or more listed. One scan apart, so a move can still be a single cheap or pricey listing.`;
+  $("movers").innerHTML = `<thead><tr><th>Ware</th><th>Before</th><th>Now</th><th>Change</th><th>Listed before</th><th>Listed now</th></tr></thead><tbody>`+
+    MV.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.prev)}</td><td>${money(r.last)}</td><td><span class="sig ${r.change>0?"sell":"buy"}">${r.change>0?"+":"−"}${Math.abs(Math.round(r.change*100))} %</span></td><td>${(r.prev_qty??"")}</td><td>${(r.qty||0).toLocaleString("en-US")}</td></tr>`).join("")+`</tbody>`;
+} else $("moverswrap").hidden = true;
+function flips(id, rows, label){
+  if(!rows.length){ $(id+"wrap").hidden = true; return 0; }
+  $(id).innerHTML = `<thead><tr><th>Ware</th><th>Auction price</th><th>${label}</th><th>Profit each</th><th>Listed</th></tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${link(r.item_id)}</td><td>${money(r.last)}</td><td>${money(r.vendor)}</td><td><b>${money(r.profit)}</b></td><td>${(r.qty||0).toLocaleString("en-US")}</td></tr>`).join("")+`</tbody>`;
+  return rows.length;
+}
+const nFlips = flips("flipA", R.flipsVendor||[], "Vendor pays") + flips("flipB", R.flipsPost||[], "Vendor cost");
+if(!nFlips) $("flipwrap").hidden = true;
+
+/* farming: measured zones (from AHledger's loot records) */
+const FZ = R.farmZones || [], FM = R.farmMin || {min_hours:2, min_opens:30};
+const ready = FZ.filter(z=>z.enough), early = FZ.filter(z=>!z.enough);
+if(FZ.length){
+  $("zonelede").textContent = `Everything you looted per hour in each zone over the last 30 days, recorded by AHledger: every drop, node, chest and catch, valued at the better of today’s auction price (after the ${Math.round(R.cut*100)} % cut) and the vendor price. Time counts by where you looted within each hour, so travel and town time lower the rate a little. A zone counts once it has ${FM.min_hours} hours and ${FM.min_opens} corpses or nodes.` + (early.length ? ` Still collecting: ${early.map(z=>`${esc(z.zone)} (${z.hours} h)`).join(", ")}.` : "");
+  if(ready.length){
+    $("zones").innerHTML = `<thead><tr><th>Zone</th><th>Hours</th><th>Looted / hour</th><th>Best wares (per hour)</th><th>Gold / hour</th></tr></thead><tbody>`+
+      ready.map(z=>`<tr><td><b>${esc(z.zone)}</b>${z.sources.length?`<span class="cat">${esc(z.sources.join(", "))}</span>`:""}</td><td>${z.hours}</td><td>${z.opens_per_hour}</td><td class="note">${z.top.map(x=>`${link(x.item_id,false)} ${x.per_hour}${x.sold_to==="vendor"?" (vendor)":""}`).join("<br>")}</td><td><b>${money(z.gph)}</b></td></tr>`).join("")+`</tbody>`;
+  } else $("zones").outerHTML = `<p class="callout quiet empty">No zone has enough loot recorded yet.</p>`;
+} else $("zonewrap").hidden = true;
+
+if(R.farms.length){
+  const nMeasured = R.farms.filter(f=>f.basis==="measured").length;
+  $("farmlede").textContent = `Routes from farms.json at today’s prices, after the ${Math.round(R.cut*100)} % auction cut. ` +
+    (nMeasured ? `Where your own loot covers a route, its rate is measured (marked); the others are estimates from farms.json.` : `All rates are estimates from farms.json until your own loot covers them.`);
+  $("farm").innerHTML = `<thead><tr><th>Ware</th><th>Where</th><th>Per hour</th><th>Basis</th><th>Price</th><th>Gold / hour</th></tr></thead><tbody>`+
+    R.farms.map(f=>{
+      const where = f.zone ? `<a href="${R.wowheadBase}/zone=${f.zone}" target="_blank" rel="noopener">${esc(f.zoneName)}</a>` : esc(f.zoneName);
+      const fn = (ed.farm_notes||{})[f.item_id];
+      return `<tr><td>${link(f.item_id)}</td><td class="note">${esc(f.what)}, ${where}${fn?`<br>${esc(fn)}`:""}</td><td>${f.basis==="measured"?"":"~"}${f.perHour}</td><td>${f.basis==="measured"?`Measured (${f.measuredHours} h)`:"Estimate"}</td><td>${money(f.last)}</td><td><b>${money(f.gph)}</b></td></tr>`;
+    }).join("")+`</tbody>`;
+} else { $("farmhead").hidden = true; $("farmlede").hidden = true;
+  $("farm").outerHTML = FZ.length ? "" : `<p class="callout quiet empty">No farm routes with prices yet. Play with AHledger on, or add routes to farms.json.</p>`; }
+const ideas = ed.farm_ideas||[];
+if(ideas.length) $("ideas").innerHTML = ideas.map(x=>`<li>${link(x.item_id,false)} · ${money(R.prices[x.item_id])} · <em>${esc(x.where)}</em>. ${esc(x.why)}</li>`).join("");
+else $("ideaswrap").hidden = true;
+const watch = ed.watch||[];
+if(watch.length) $("watch").innerHTML = watch.map(x=>`<li>${link(x.item_id,false)} · ${money(R.prices[x.item_id])}. ${esc(x.why)}</li>`).join("");
+else $("watchwrap").hidden = true;
+
+/* charts */
+const N = R.dates.length;
+$("chartlede").textContent = `${N} days of minimum buyout for the most traded wares. Touch or hover a chart to read a day.`;
+const coin = (c,dp=1) => c>=10000 ? `${(c/10000).toFixed(c>=1e6?0:dp)}g` : c>=100 ? `${(c/100).toFixed(dp>1?1:0)}s` : `${Math.round(c)}c`;
+const W=320,H=150,L=40,Rr=10,T=10,B=24;
+R.charts.forEach((it,idx)=>{
+  const s=it.series;
+  const avg=s.map((_,d)=>{ const w=s.slice(Math.max(0,d-6),d+1).filter(v=>v!=null); return d<6||w.length<3?null:w.reduce((a,b)=>a+b,0)/w.length; });
+  const all=s.concat(avg).filter(v=>v!=null);
+  if(!all.length) return;
+  let lo=Math.min(...all), hi=Math.max(...all); const pad=(hi-lo)*.12||hi*.05||1; lo=Math.max(0,lo-pad); hi+=pad;
+  const x=d=>L+d*(W-L-Rr)/(N-1), y=v=>T+(hi-v)*(H-T-B)/(hi-lo);
+  const path=arr=>{ let p="", pen=false; arr.forEach((v,d)=>{ if(v==null){pen=false;return;} p+=`${pen?"L":"M"}${x(d).toFixed(1)} ${y(v).toFixed(1)}`; pen=true; }); return p; };
+  const pts=s.map((v,d)=>v==null?null:[d,v]).filter(Boolean);
+  const area=pts.length>1?`M${x(pts[0][0])} ${H-B}`+pts.map(([d,v])=>`L${x(d).toFixed(1)} ${y(v).toFixed(1)}`).join("")+`L${x(pts.at(-1)[0])} ${H-B}Z`:"";
+  const ticks=[lo+(hi-lo)*.1,(lo+hi)/2,hi-(hi-lo)*.1];
+  const lastI=pts.at(-1)[0], lastV=pts.at(-1)[1];
+  const up=it.ratio>=1;
+  const fig=document.createElement("figure");
+  const xl=[0,Math.floor((N-1)/2),N-1];
+  fig.innerHTML=`<figcaption><span>${link(it.item_id,false)}</span><span class="chg ${up?"up":"down"}">${pct(it.ratio)} vs avg</span></figcaption>
+  <svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(item(it.item_id).name)} price over ${N} days, now ${coin(it.last)}">
+    <defs><linearGradient id="wash${idx}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5a2b" stop-opacity=".32"/><stop offset="1" stop-color="#8a5a2b" stop-opacity="0"/></linearGradient></defs>
+    ${ticks.map(t=>`<line x1="${L}" x2="${W-Rr}" y1="${y(t)}" y2="${y(t)}" stroke="#8a5a2b" stroke-opacity=".35" stroke-dasharray="1 3"/><text x="${L-6}" y="${y(t)+3}" text-anchor="end">${coin(Math.round(t), (hi-lo)/hi<.25?2:1)}</text>`).join("")}
+    <line x1="${L}" x2="${W-Rr}" y1="${H-B}" y2="${H-B}" stroke="#8a5a2b"/>
+    ${xl.map((d,k)=>`<text x="${x(d)}" y="${H-7}" text-anchor="${k===0?"start":k===2?"end":"middle"}">${short(R.dates[d])}</text>`).join("")}
+    <path d="${area}" fill="url(#wash${idx})"/>
+    <path d="${path(avg)}" fill="none" stroke="#8b1a1a" stroke-width="1.4" stroke-dasharray="4 3"/>
+    <path d="${path(s)}" fill="none" stroke="#3a3532" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${x(lastI)}" cy="${y(lastV)}" r="4" fill="${up?"#8b1a1a":"#4a5a22"}" stroke="#e2cfa6" stroke-width="1.5"/>
+    <line class="hair" x1="0" x2="0" y1="${T}" y2="${H-B}" stroke="#3a3532" stroke-opacity=".5" visibility="hidden"/>
+    <circle class="hdot" r="3.5" fill="#3a3532" visibility="hidden"/>
+    <rect x="${L}" y="${T}" width="${W-L-Rr}" height="${H-T-B}" fill="transparent"/>
+  </svg><div class="tip" hidden></div>`;
+  $("charts").appendChild(fig);
+  const svg=fig.querySelector("svg"), tip=fig.querySelector(".tip"), hair=svg.querySelector(".hair"), dot=svg.querySelector(".hdot");
+  svg.addEventListener("pointermove",move); svg.addEventListener("pointerdown",move);
+  svg.addEventListener("pointerleave",()=>{tip.hidden=true; hair.setAttribute("visibility","hidden"); dot.setAttribute("visibility","hidden");});
+  function move(e){
+    const b=svg.getBoundingClientRect(); const px=(e.clientX-b.left)*W/b.width;
+    const d=Math.max(0,Math.min(N-1,Math.round((px-L)/((W-L-Rr)/(N-1)))));
+    hair.setAttribute("x1",x(d)); hair.setAttribute("x2",x(d)); hair.setAttribute("visibility","visible");
+    if(s[d]!=null){ dot.setAttribute("cx",x(d)); dot.setAttribute("cy",y(s[d])); dot.setAttribute("visibility","visible"); } else dot.setAttribute("visibility","hidden");
+    tip.hidden=false; tip.innerHTML=`${short(R.dates[d])} · ${s[d]!=null?money(s[d]):"no scan"}`;
+    tip.style.left=(x(d)*b.width/W)+"px"; tip.style.top=(svg.offsetTop+y(s[d]??lo)*b.height/H)+"px";
+  }
+});
+if(!R.charts.length) $("charts").outerHTML = `<p class="callout quiet empty">Charts appear once an item has at least five days of history.</p>`;
+
+/* method */
+$("rules").innerHTML = `<dt>Buy</dt><dd>Price ≤ ${Math.round(S.buy_below_ratio*100)} % of the 7-day ${S.robust===false?'mean':'median'}, at least ${S.min_listed} listed, resale ≥ ${S.margin_of_safety}× price; ranked by expected profit.</dd>
+  <dt>Sell</dt><dd>Price ≥ ${Math.round(S.sell_above_ratio*100)} % of the 7-day ${S.robust===false?'mean':'median'}.</dd>
+  <dt>Farm</dt><dd>Drops per hour × price × ${(1-R.cut).toFixed(2)} (after the auction cut).</dd>
+  <dt>Stock</dt><dd>Short: under ${Math.round(S.shortage_ratio*100)} % of the usual quantity; glut: over ${S.glut_ratio}× usual.</dd>
+  <dt>CPI</dt><dd>Orgrimmar CPI: the most traded profession goods and consumables, priced against the first full week after launch (= 100); basket and weights renewed every four weeks and chained.</dd>
+  <dt>Thin market</dt><dd>Few units listed, patchy history or few sales: no buy ideas, other signals with caution.</dd>
+  <dt>List at</dt><dd>The price with the best expected return per listing, from how often listings at each price level sell.</dd>
+  <dt>Unusual</dt><dd>Price ${S.outlier_z} or more typical daily swings away from its last 14 days and at least ${Math.round(S.outlier_min_change*100)} % from the average (needs 7 days of scans).</dd>
+  <dt>Events</dt><dd>Within ${S.event_window_days} days of a major event, signals carry a warning.</dd>
+  <dt>Floor</dt><dd>Items under ${money(S.min_price_copper)} are ignored.</dd>`;
+$("sources").innerHTML = `Prices from the ${esc(R.source)} of ${nice(R.scanDate)}, kept in the local price history. Item pages link to <a href="${R.wowheadBase}" target="_blank" rel="noopener">Wowhead</a>. Drop rates in farms.json are your own estimates.`;
+$("footer").textContent = (R.demo ? "Demo figures generated for testing. " : "") + `Drawn up ${R.generated.replace("T"," at ")}. Financial Times Orgrimmar gives ideas, not guarantees: the market can turn by the next scan.`;
+/* public version (shared on Discord): no personal wording */
+if(R.public){
+  $("farmhead").textContent = "Farm routes";
+  if(R.farms.length) $("farmlede").textContent = `Farm routes at today’s prices, after the ${Math.round(R.cut*100)} % auction cut. Rates per hour are estimates.`;
+  $("sources").innerHTML = $("sources").innerHTML.replace("Drop rates in farms.json are your own estimates.", "Drop rates are estimates.");
+}
+</script>
 </body>
 </html>
